@@ -1,33 +1,74 @@
-// Como ya sabemos crear objetos y definir algunos métodos simples, 
-// algunos los tenemos parcialmente definidos. Completar todo los demás
-// para satisfacer lo que pide el enunciado.
 
 object heladera {
-	method precio() { return 200000 }
-	method esComida() { return false }
-	method esElectrodomestico() { return true }	
+	method precio() = 200000 
+	method esComida() = false 
+	method esElectrodomestico() = true 	
 }
 
 object cama {
-	method precio() { return 80000 }
-	method esComida() { return false }
-	method esElectrodomestico() { return false }	
+	method precio() = 80000 
+	method esComida() = false 
+	method esElectrodomestico() = false 	
 }
 
 object tiraDeAsado {
-	method precio() { return 3500 }
-	method esComida() { return true }
-	method esElectrodomestico() { return false }	
+	method precio() = 3500 
+	method esComida() = true 
+	method esElectrodomestico() = false 	
 }
 
 object paqueteDeFideos {
-	method precio() { return 500 }
-	method esComida() { return true }
-	method esElectrodomestico() { return false }	
+	method precio() = 500 
+	method esComida() = true 
+	method esElectrodomestico() = false 	
 }
 
 object plancha {
-	method precio() { return 12000 }
-	method esComida() { return false }
-	method esElectrodomestico() { return true }	
+	method precio() = 12000 
+	method esComida() = false 
+	method esElectrodomestico() = true 	
+}
+
+object kiloMila{
+	method precio() = 2600
+	method esComida() = true
+	method esElectrodomestico() = false
+}
+
+object botellaSalsaTomate{
+	method precio() = 900 
+	method esComida() = true
+	method esElectrodomestico() = false
+}
+
+object microondas{
+	method precio() = 42000 
+	method esComida() = false 
+	method esElectrodomestico() = true 	
+}
+
+object kiloCebollas{
+	method precio() = 250 
+	method esComida() = true
+	method esElectrodomestico() = false
+}
+
+object compu{
+	method precio() = 500 * dolar.precioVenta()
+	method esComida() = false 
+	method esElectrodomestico() = true 	
+}
+
+object packComida{
+	var property plato = paqueteDeFideos    // puede ser: paquete de fideos, tira de asado o milanesas
+	var property salsa = kiloCebollas       // puede ser: kilo de cebolla o botella de salsa de tomates
+	
+	method precio() = (self.plato().precio()) + (self.salsa().precio()) 
+	method esComida() = true
+	method esElectrodomestico() = false
+}
+
+object dolar{
+	
+	var property precioVenta = 1000
 }
